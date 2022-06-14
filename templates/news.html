@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content%}
+<main class="container mt-3 mb-5">
+	<h3 class="border-bottom pb-1 my-4">{{news.category.title }}</h3>
+	<!-- News Box -->
+    {% for new in all_news %}
+	<div class="card mb-4 shadow">
+	  <div class="row no-gutters">
+	    <div class="col-md-3">
+	      <img src="/media/{{new.image}}" class="card-img" alt="{{new.title}}">
+	    </div>
+	    <div class="col-md-8">
+	      <div class="card-body">
+	        <h5 class="card-title">{{new.title}}</h5>
+	        <p class="card-text">{{new.detail}}</p>
+	        <p class="card-text"><a href="{{new.id}}/detail" class="btn btn-sm btn-primary">Read Full</a></p>
+              <p class="card-text">{{new.blog_views}}</p>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+{% endfor %}
+</main>
+{% endblock%}
